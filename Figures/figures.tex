@@ -1,1 +1,342 @@
+% Make sure you use all the packages! 
+\documentclass[12pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage[a4paper, total={6in, 8in}]{geometry} % See geometry.pdf to learn the layout options. There are lots.
+\usepackage{tgtermes}
 
+\setlength{\parindent}{0.5cm}
+\setlength{\parskip}{0.2cm}
+\renewcommand{\baselinestretch}{1.5}
+
+
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}% Use png, jpg, or eps§ with pdflatex; use eps in DVI mode
+\usepackage{sidecap}
+\usepackage{wrapfig}
+
+\usepackage{float}
+\usepackage{subcaption}				
+% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{lipsum}
+							% TeX will automatically convert eps --> pdf in pdflatex		
+
+
+\usepackage{import}
+\usepackage{subfiles}
+\usepackage[hidelinks]{hyperref} %allows clickable ref
+
+\usepackage{tikz}
+
+%Allows clickable ref
+\usepackage[hidelinks]{hyperref} 
+
+%Bibliography preamble
+\usepackage[numbers,sort&compress]{natbib}
+
+%Header and Footer Stuff. go and READ the doc of fancyhdr package. 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[C]{\thepage\ } %Page Number to the right(R) or to the left(L) or the center(C)
+
+
+\begin{document}
+
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\vspace{100cm}
+    \begin{center}
+    \HRule \\
+    [0.4cm] 
+    { \huge \bfseries Figures}\\ 
+    [0.4cm] % Title of your document
+    \HRule \\
+    [2.5cm]
+    
+    \textsc{\LARGE }\\
+    [1cm]
+    \textsc{\Large }\\ 
+    [2cm]
+    \textsc{\Large }
+    \end{center}
+\vfill
+\end{titlepage}
+
+
+
+%\addcontentsline{toc}{section}{\numberline{}Introduction}
+
+%Table of figures
+\listoffigures
+\addcontentsline{toc}{section}{\numberline{}List of Figures}
+
+
+%Table of tables
+%\listoftables
+%\addcontentsline{toc}{section}{\numberline{}List of Tables}
+%\cleardoublepage
+
+%Table of contents stuff. 
+%\tableofcontents % to create an auto traceable table of contents.  
+%\thispagestyle{empty} %to make the page with no number. 
+%\cleardoublepage
+
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H] 
+	\centering
+	\includegraphics[height=3in]{Cat.jpeg}
+	\caption{Basic Figure.}
+	\label{fig:Basic Figure}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
+\subfloat[\centering Fat Cat Left]{\includegraphics[width = 3in]{Cat.jpeg}} 
+\subfloat[\centering Fat Cat Right]{\includegraphics[width = 3in]{Cat.jpeg}}\\
+\caption{Double Images Figure.}
+\label{fig:Double Image}
+\end{figure}
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[scale=.8]{Cat.jpeg}
+        \caption{Left Fat Cat}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[scale=.8]{Cat.jpeg}
+        \caption{Right Fat Cat}
+    \end{subfigure}
+    \caption{Double Image with space in between. }
+\end{figure}
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
+\begin{minipage}{.5\linewidth}
+\centering
+\subfloat[\centering Fat Cat Left]{\label{main:a}\includegraphics[scale=.6]{Cat.jpeg}}
+\end{minipage}%
+\begin{minipage}{.5\linewidth}
+\centering
+\subfloat[\centering Fat Cat Right]{\label{main:b}\includegraphics[scale=.6]{Cat.jpeg}}
+\end{minipage}\par\medskip
+\centering
+\subfloat[\centering Fat 
+Cat Down]{\label{main:c}\includegraphics[scale=.6]{Cat.jpeg}}
+\caption{Three Images Figure.}
+\label{fig:3}
+\end{figure}
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
+    \centering
+    \subfloat[Top]{\includegraphics[scale=.6]{Cat.jpeg}}
+    \\
+    \subfloat[Left]{\includegraphics[scale=.6]{Cat.jpeg}}
+    \subfloat[Right]{\includegraphics[scale=.6]{Cat.jpeg}}
+    \caption{Three Images Upside down.}
+
+\end{figure}
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include first image
+  \includegraphics[width=.8\linewidth]{Cat.jpeg}  
+  \caption{Fat Cat Top Left.}
+  \label{fig:dataaugA}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include second image
+  \includegraphics[width=.8\linewidth]{Cat.jpeg}  
+  \caption{Fat Cat Top Right.}
+  \label{fig:dataaugB}
+\end{subfigure}
+
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include third image
+  \includegraphics[width=.8\linewidth]{Cat.jpeg}  
+  \caption{Fat Cat Button Left.}
+  \label{fig:dataaugC}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include fourth image
+  \includegraphics[width=.8\linewidth]{Cat.jpeg}  
+  \caption{Fat Cat Button Right.}
+  \label{fig:dataaugD}
+\end{subfigure}
+\caption{Four Images Figure.}
+\label{fig:dataaug}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=.4\textwidth]{PamBeesley.jpg}
+  \hspace{1cm}
+  \includegraphics[width=.4\textwidth]{MichaelScott.png}
+
+  \vspace{1.5cm}
+
+  \includegraphics[width=.4\textwidth]{JimHalpert.png}
+  \hspace{1cm}
+  \includegraphics[width=.4\textwidth]{Dwight.jpg}
+
+  \vspace{1.5cm}
+
+  \includegraphics[width=.4\textwidth]{Darryl.png}
+  \hspace{1cm}
+  \includegraphics[width=.4\textwidth]{Toby.png}
+
+  \caption{Six Figures In one Page. NO Captions}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{dunder.jpg}
+  \end{center}
+  \caption{Text Wrap a Figure. }
+\end{wrapfigure}
+Dunder Mifflin Scranton is a branch of the Dunder Mifflin Paper Company that is based out of Scranton, Pennsylvania in Lackawanna County. It is located at 1725 Slough Avenue in the Scranton Business Park, Suite 200. It is the main setting for the show The Office. As revealed in Casino Night, the Dunder Mifflin Scranton warehouse - perhaps including the suite - is on a seven years lease from Beekman Properties. According to Dwight, the lease was at its fourth year at the time, which means the lease will end sometime during the year 2009 if not renewed. However, in Branch Closing it has been revealed that Bob Vance of Vance Refrigeration was going to buy the warehouse.
+Season 1 of The Office began aired on March 24, 2005 on NBC. It was based on the BBC series created by Ricky Gervais and Stephen Merchant of the same name, and developed for American television by Greg Daniels.
+There are only 6 episodes in Season 1, making it significantly shorter than all other seasons. It aired from March 24, 2005, to April 26, 2005.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{SCfigure}
+  \centering
+  \caption{Long Caption Image.}
+  \includegraphics[width= 0.4 \textwidth]{dunder.jpg}% picture filename
+\end{SCfigure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t!] % "[t!]" placement specifier just for this example
+\begin{subfigure}{0.4\textwidth}
+\includegraphics[width=\linewidth]{PamBeesley.jpg}
+\caption{First subfigure} \label{fig:7a}
+\end{subfigure}\hspace*{\fill}
+\begin{subfigure}{0.4\textwidth}
+\includegraphics[width=\linewidth]{MichaelScott.png}
+\caption{Second subfigure} \label{fig:7b}
+\end{subfigure}
+
+\medskip
+\begin{subfigure}{0.4\textwidth}
+\includegraphics[width=\linewidth]{JimHalpert.png}
+\caption{Third subfigure} \label{fig:7c}
+\end{subfigure}\hspace*{\fill}
+\begin{subfigure}{0.4\textwidth}
+\includegraphics[width=\linewidth]{Dwight.jpg}
+\caption{Fourth subfigure} \label{fig:7d}
+\end{subfigure}
+
+\medskip
+\begin{subfigure}{0.4\textwidth}
+\includegraphics[width=\linewidth]{Darryl.png}
+\caption{Fifth subfigure} \label{fig:7e}
+\end{subfigure}\hspace*{\fill}
+\begin{subfigure}{0.4\textwidth}
+\includegraphics[width=\linewidth]{Toby.png}
+\caption{Sixth subfigure} \label{fig:7f}
+\end{subfigure}
+
+\caption{Six Figures In one Page. With Captions.} 
+\label{fig:7}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}
+    \centering
+        \begin{minipage}{.3\textwidth}
+            \begin{subfigure}{\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{MichaelScott.png}
+            \caption{Top Left}
+            \end{subfigure}\\
+            \begin{subfigure}{\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{PamBeesley.jpg}
+            \caption{Bottom Left}
+            \end{subfigure}%    
+        \end{minipage}
+        \hfill
+        \begin{minipage}{.3\textwidth}
+            \begin{subfigure}{\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Toby.png}
+            \caption{Top Middle}
+            \end{subfigure}\\
+            \begin{subfigure}{\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{JimHalpert.png}
+            \caption{Bottom Middle}
+            \end{subfigure}%    
+        \end{minipage}
+        \hfill
+        \begin{minipage}{.3\textwidth}
+            \begin{subfigure}{\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Dwight.jpg}
+            \caption{Top Right}
+            \end{subfigure}\\
+            \begin{subfigure}{\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Darryl.png}
+            \caption{Bottom Right}
+            \end{subfigure}%    
+        \end{minipage}%
+    \caption{Horizontal 6 Figures with caption. }  
+    \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}  
