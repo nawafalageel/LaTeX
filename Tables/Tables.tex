@@ -1,0 +1,185 @@
+
+\documentclass[12pt, onside]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}{geometry}
+\usepackage{graphicx}
+
+% \usepackage[hideliks]{hyperref}
+% \usepackage[{numbers,sort&compress]{natbib}
+\renewcommand{\baselinestretch}{1.5}
+% \usepackage{graphicx}
+\usepackage[hidelinks]{hyperref} %allows clickable ref
+
+
+\usepackage{graphicx}
+\usepackage{sidecap}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{subcaption}				
+\usepackage{amssymb}
+\usepackage{lipsum}
+\usepackage{import}
+\usepackage{subfiles}
+\usepackage{array}
+\usepackage{multirow}
+
+
+\title{Tables}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+
+\newpage
+\section{Introduction}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[h]
+\begin{center} {
+\begin{tabular}{lccc}
+\hline 
+& \multicolumn{3}{c}{\bf Acuraccy}  \\[0.5 pt]
+& \multicolumn{1}{c}{Training} & \multicolumn{1}{c}{Validation} & \multicolumn{1}{c}{Testing}\\
+{Proposed} & 67\% & 67\% & 67.1\%\\[1ex]
+{AlexNet} & 53\% & 54.5\% & 43.1\%\\[1ex]
+{\bf ResNet} & 67\% & 74.96\% & 67.2\% \\[1ex]
+\hline 
+\end{tabular}}
+\end{center}
+\caption{Comparison between models.}
+\label{tab:com}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[h]
+    \centering
+\begin{tabular}{ |l|l|l| }
+% \hline
+% \multicolumn{3}{ |c| }{Team sheet} \\
+\hline
+CPU/GPU & Specs & inference time \\
+\hline
+\multirow{3}{*}{GPU} 
+ & RTX 2060 & $\geq 1s$ \href{https://github.com/facebookresearch/detectron2/issues/308}{.\bf1} \\
+ & Tesla P100 & $\geq 150ms$ \href{https://github.com/facebookresearch/detectron2/issues/308}{.\bf1} \\
+ & RTX2080 Ti &  $ \sim 90ms$ \href{https://forums.fast.ai/t/object-detection-models-deplyoment-in-real-life/72853}{.\bf2}\\
+\hline
+\multirow{1}{*}{CPU} 
+ & i9 9940X & $\sim 2.4s$ \href{https://forums.fast.ai/t/object-detection-models-deplyoment-in-real-life/72853}{.\bf2} \\
+\hline
+\end{tabular}
+\caption{Inference benchmark.}
+\label{tab:inferbench}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{| c | c |}
+\cline{1-2}
+Operation &  Values \\
+\hline \hline
+Rotation & Random rotation between 0 and 5 degrees \\ \cline{1-2}
+Fill Mode & Constant \\ \cline{1-2}
+Horizontal Flip & TRUE: 180 degree rotation \\ \cline{1-2}
+Vertical Flip & TRUE: Rotate vertically \\  \cline{1-2}
+Adding Noise & Random noise \\ \cline{1-2}
+\end{tabular}
+\caption{\label{tab:Aug}Augmentation Operations.}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[t]
+\begin{center} 
+\begin{tabular}{p{0.3\textwidth}>{\centering} p{0.4\textwidth}>{\centering}}
+\hline
+\multirow{2}{*}{Benchmark} 
+& \multicolumn{2}{c}{Mask R-CNN Backbone} \\
+& R-50-FPN  & R-101-FPN  \\
+\hline
+im/gpu & 2 & 2 \\
+train mem(GB) & 5.2 & 7.9 \\
+train time (s/iter) & 0.4536 & 0.5665 \\
+total train time(hr) & 11.3 & 14.2\\
+inference time(s/im) & 0.12966 + 0.034 & 0.15384 + 0.034 \\
+box AP & 37.8 & 40.1 \\
+mask AP & 34.2 & 36.1 \\
+
+\hline
+\end{tabular}
+\end{center}
+\caption{Training benchmark.}
+\label{tab:trainbench}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|}
+\hline
+Category & BI-RADS   & Diagnosis                                                                                             & Likelihood of Cancer                                                                 \\ \hline
+1        & BI-RADS 0 & Incomplete                                                                                            & N/A                                                                                  \\ \hline
+2        & BI-RADS 1 & Negative.                                                                                             & 0\%                                                                                  \\ \hline
+3        & BI-RADS 2 & Benign lesion.                                                                                        & 0\%                                                                                  \\ \hline
+4        & BI-RADS 3 & Probably benign lesion.                                                                               & but \textless{}2\% risk of malignancy                                                \\ \hline
+5        & BI-RADS 4 & \begin{tabular}[c]{@{}c@{}}Suspicious of Malignancy (3-95\%)\\ Divided into three parts:\end{tabular} & \begin{tabular}[c]{@{}c@{}}4A: 3-10\%\\ \\ 4B: 11-50\%\\ \\ 4C: 51-95\%\end{tabular} \\ \hline
+6        & BI-RADS 5 & Highly suggestive of malignancy                                                                       & \textgreater{}95\%                                                                   \\ \hline
+7        & BI-RADS 6 & Known cancer                                                                                          & 100\%                                                                                \\ \hline
+\end{tabular}%
+}
+\caption{BI-RADS Categories}
+\label{tab:my-table}
+\end{table}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[h]
+\begin{center} {
+\begin{tabular}{lccc}
+\hline 
+& \multicolumn{3}{c}{}  \\[0.5 pt]
+& \multicolumn{1}{c}{box AP} & \multicolumn{1}{c}{mask AP} & \multicolumn{1}{c}{Average inference time(s/im)}\\
+{Faster (R101-FPN)} & 42.0\% & - & 0.07588\\[1ex]
+{Mask (R101-FPN) } & 53\% & 54.5\% & 0.07517\\[1ex]
+\hline 
+\end{tabular}}
+\end{center}
+\caption{Comparison between models.}
+\label{tab:com}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+% Adaptive Table
+\begin{table}[t]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|l|}
+\hline
+Week Number & Topic                     \\ \hline
+1           & Introduction                \\ \hline
+2           & Second                     \\ \hline
+3           & Third                     \\ \hline
+4           & Fourth                                \\ \hline
+5           & Fifth                                  \\ \hline
+6           & Development                            \\ \hline
+7           &         Development                    \\ \hline
+8           & Development                               \\ \hline
+9           & Development                           \\ \hline
+10          & Writing Final Report.                                                                                                            \\ \hline
+\end{tabular}%
+}
+\caption{Adaptive Table}
+\label{tab:aaaa}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

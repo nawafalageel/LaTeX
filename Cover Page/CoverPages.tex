@@ -1,0 +1,240 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry} %[margin=0.5cm,left=0.5cm,includefoot]             		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+\usepackage{float}
+\usepackage{subcaption}				
+% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{lipsum}
+
+%\usepackage[non]{hyphenat}
+%\usepackage{array}
+
+\usepackage{import}
+\usepackage{subfiles}
+\usepackage[hidelinks]{hyperref} %allows clickable ref
+
+\usepackage{tgtermes}
+
+\setlength{\parindent}{0.5cm}
+\setlength{\parskip}{0.2cm}
+\renewcommand{\baselinestretch}{1.5}
+
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+\usepackage{graphicx}% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+\usepackage{float}
+\usepackage{subcaption}				
+% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{lipsum}
+							% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage[normalem]{ulem}
+
+\usepackage{import}
+\usepackage{subfiles}
+\usepackage[hidelinks]{hyperref} %allows clickable ref
+
+\usepackage{tikz}
+
+
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+%SetFonts
+
+%SetFonts
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+%bullet preamble
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\diamond$}
+\renewcommand{\labelitemiii}{$\circ$}
+
+%Math preamble
+\usepackage{mhchem}% allow us to write a chemistry equations 
+\usepackage{xfrac}%allow us to use smaller fractions. 
+
+
+%Header and Footer Stuff. go and READ the doc of fancyhdr package. 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[L]{\thepage\ } %Page Number to the right(R) or to the left(L) or the center(C)
+%
+
+
+\title{Report Title}
+\author{Name}
+\date		% Activate to display a given date or no date
+
+
+
+
+\begin{document} %Start of the Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Basic cover page
+\maketitle 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Cover page with logo.
+\begin{titlepage}
+\begin{center}
+\includegraphics[width =6cm, height=6cm]{/Logo/Path} %Logo in the middle 
+\end{center}
+\vspace{2cm}
+    \begin{center}
+    \huge{\bfseries Report Title}\\
+    [3cm] %Spacing
+    \textsc{\LARGE Name}\\
+    \textsc{\Large}\\ 
+    [2cm]
+    Date
+    \end{center}
+\vfill
+
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\begin{titlepage}
+    
+\begin{center}
+
+    \textbf{\LARGE Name of the Company}\\
+	\line(1,0){300}\\
+	[0.30in]
+	\huge{\bfseries Report title}\\
+	[0.30in]
+	\line(1,0){200}\\
+    [0.30in]
+    \textbf{\LARGE Subtitle}\\
+    [0.30in]
+    \textit{\Large Name}\\
+    [0.50in]
+    \textbf{\small Date}
+\end{center}
+
+
+\end{titlepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\begin{titlepage}
+
+\begin{center}
+\title{
+		\centering \LARGE \textbf{\uppercase{Report Title}}\\
+		[0.5cm]
+		\normalsize \textsc{Name}\\
+		[0.5cm]
+		\normalsize \today \vspace*{5\baselineskip}\\
+		
+		}
+\end{center}
+
+
+
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\begin{titlepage}
+
+\Large
+\sffamily
+
+\begin{center}
+  \textbf{\LARGE Name of the Company}
+\end{center}
+
+\vfill
+\begin{center}
+  \huge Report Title
+\vspace{24pt}\\
+\end{center}
+
+\vspace*{2cm}
+\centerline{\huge Name} 
+
+\vfill
+
+\begin{center}
+  \large
+ More names.........
+\end{center}
+
+\vfill
+\begin{center}
+    More stuff......
+\end{center}
+\vfill
+\centerline{Date}
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+    \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north west, yshift=75pt, xshift=290pt ]%at (current page.north west)
+        {\includegraphics[width=5cm, height=4cm]{dunder.jpg}};
+    \end{tikzpicture}
+    
+      \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north east, yshift=-28pt, xshift=200pt]%
+        at (current page.north west)
+        {\includegraphics[width=5cm, height=4cm]{dunder.jpg}};
+    \end{tikzpicture}
+
+\vspace{5cm}
+    \begin{center}
+    \HRule \\
+    [0.4cm] 
+    { \huge \bfseries Sales Report}\\ 
+    [0.4cm] % Title of your document
+    \HRule \\
+    [2.5cm]
+    
+    \textsc{\LARGE Dwight K. Schrute}\\
+    [1cm]
+    \textsc{\Large salesman and the assistant to the regional manager}\\ 
+    [2cm]
+    \textsc{\Large June 14   -   August 27, 2007}
+    \end{center}
+\vfill
+
+\begin{minipage}[b]{5cm}
+ 	
+	\large \bf Regional Manager \\
+	\large Signature:
+	
+	
+\end{minipage}
+
+\end{titlepage}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

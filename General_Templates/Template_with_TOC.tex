@@ -1,0 +1,84 @@
+\documentclass[12pt, onside]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+% \usepackage[{numbers,sort&compress]{natbib}
+\renewcommand{\baselinestretch}{1.5}
+% \usepackage{graphicx}
+\usepackage[hidelinks]{hyperref} %allows clickable ref
+
+\usepackage{graphicx}
+\usepackage{sidecap}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{subcaption}				
+\usepackage{amssymb}
+\usepackage{lipsum}
+\usepackage{import}
+\usepackage{subfiles}
+
+
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+\begin{center}
+% \includegraphics[width =6cm, height=6cm]{/Logo/Path} %Logo in the middle 
+\end{center}
+\vspace{2cm}
+    \begin{center}
+    \huge{\bfseries Report}\\
+    [3cm] %Spacing
+    \textsc{\LARGE Name}\\
+    \textsc{\Large}\\ 
+    [2cm]
+    2018/05/24
+    \end{center}
+\vfill
+
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+% For the List of figures
+\listoffigures
+\addcontentsline{toc}{section}{\numberline{}List of Figures}
+
+% For the List of tables
+\listoftables
+\addcontentsline{toc}{section}{\numberline{}List of Tabels}
+
+% Create the table of content 
+\tableofcontents
+
+\newpage
+\section{Section1}
+
+
+\subsection{Subsection}
+\subsection{Subsection}
+\subsection{Subsection}
+
+\section{Section2}
+
+
+\subsection{Subsection}
+\subsubsection{Subsubsection}
+\subsubsection{Subsubsection}
+\subsection{Subsection}
+\subsection{Subsection}
+
+\section{conclusion}
+
+
+
+\newpage
+
+
+\clearpage
+\bibliographystyle{IEEEtran}
+\bibliography{ref.bib}
+\addcontentsline{toc}{section}{\numberline{}References}
+\end{document}

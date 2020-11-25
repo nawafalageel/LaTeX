@@ -1,0 +1,127 @@
+
+\documentclass[12pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+
+%Allows clickable ref
+\usepackage[hidelinks]{hyperref} 
+
+%Bibliography preamble
+\usepackage[numbers,sort&compress]{natbib}
+
+%Header and Footer Stuff. go and READ the doc of fancyhdr package. 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[C]{\thepage\ } %Page Number to the right(R) or to the left(L) or the center(C)
+
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+    \huge{\bfseries Test Report}\\
+    [3cm] %Spacing
+    \textsc{\LARGE Nawaf Khalid Alageel}\\
+    \textsc{\Large}\\ 
+    [2cm]
+    3 July 2020
+    \end{center}
+\end{titlepage}
+
+\begin{center}
+    \pagenumbering{roman} %to let the page number in roman text. 
+    \vspace*{\fill}
+    \section*{ Abstract} %the * to not label the section. 
+
+    \vspace*{\fill}
+    \addcontentsline{toc}{section}{\numberline{}Abstract}
+    \cleardoublepage
+\end{center}
+
+
+%Table of contents stuff. 
+\tableofcontents % to create an auto traceable table of contents.  
+\thispagestyle{empty} %to make the page with no number. 
+\cleardoublepage
+
+
+\pagenumbering{arabic}
+\setcounter{page}{1} 
+
+\section{Introducion}
+
+
+
+
+\newpage
+\section{Related Work}
+\subsection{Overview}
+\subsection{Review of the state-of-the-art}
+\subsection{Analysis}
+
+
+
+\newpage
+\section{Proposed Method}
+\subsection{Overview}
+\subsection{Problem formulation}
+\subsection{Method}
+\subsection{Proposed CNN model}
+\subsection{Dataset and Data Augmentation}
+\subsection{Training the CNN model}
+
+
+
+\newpage
+\section{Evaluation Protocol}
+\subsection{Implementation details}
+\subsection{Evaluation method and metrics}
+\subsubsection{Accuracy}
+\subsubsection{Specificity}
+\subsubsection{Sensitivity}
+\subsubsection{Precision}
+
+
+
+\newpage
+\section{Model Selections}
+\subsection{CNN architectures}
+\subsection{Activation functions}
+\subsection{Optimizers}
+
+
+
+\newpage
+\section{Results}
+
+
+\newpage
+\section{Comparison and Discussion}
+
+
+\newpage
+\section{Analysis of Features}
+\subsection{Box Plots}
+\subsection{ROC Curve}
+\subsection{Confusion Matrix}
+
+
+\section{Conclusion}
+
+
+\cleardoublepage
+\bibliographystyle{IEEEtran}
+\bibliography{/Users/nawafalageel/Desktop/NGHA/NGHA_Reports/LatexNGHA/ref.bib}% Here must be the bib file path. 
+\addcontentsline{toc}{section}{\numberline{}References}  
+\cleardoublepage
+
+
+
+\end{document}  

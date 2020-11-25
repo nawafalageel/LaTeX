@@ -1,0 +1,266 @@
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}[margin=0.5cm,left=0.5cm,includefoot] 
+\title{Mathematics}
+\date{}
+
+%Math preamble
+\usepackage{mhchem}% allow us to write a chemistry equations 
+\usepackage{xfrac}%allow us to use smaller fractions. 
+\usepackage{amsmath} 
+%Visit this site it might help a lot with symbols.  https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols
+
+
+\begin{document}
+
+\maketitle
+
+
+\newpage
+\section{Introduction}
+
+
+
+\subsection{Mathematics}
+Every time you want to write a math problem make sure you but it between two dollar sign $E=mc^2$ and it is looking cool!
+And way much easier than stupid word. If you put two dollar signs the equation will be isolated from the whole text  $$PV=nRT$$ wow look how beautiful is this!  
+
+we can use symbols like this $$\frac{\hbar^2}{2m}$$
+
+
+
+some times we do not need a fraction like this it is so stupid: $$d = v_it+ 1/2 \cdot at^2$$
+
+or we can let it look like this $d = v_it+ \frac{1}{2} \cdot at^2$. But still no no no no. 
+look at this this might be better right? $$d = v_it+ \sfrac{1}{2} \cdot at^2$$
+
+For brackets: $$\left( \frac{2}{3} \right)$$
+$$\left| -7 \right| =7 $$
+
+$$x^{2^{4^5}}$$
+$$\sqrt{4} = 2$$
+$$\sqrt{4} \neq 5$$
+$$\sqrt{4} <5 $$
+$$\pi \approx 3$$
+$$\alpha \times \sqrt{4} \neq me$$
+$$\sqrt{\beta}$$ 
+
+\begin{eqnarray}
+    x^{2^{4^5}} \\
+    \sqrt{4} = 2 \\ 
+    \sqrt{4} \neq 5 \\ 
+    \sqrt{4} <5 \\\
+    \pi \approx 3 \\
+    \alpha \times \sqrt{4} \neq me \\
+    \sqrt{\beta} 
+\end{eqnarray}    
+
+\begin{eqnarray}
+    x^{2^{4^5}} \\
+    \sqrt{4} &=& 2 \\ 
+    \sqrt{4} &\neq& 5 \\ 
+    \sqrt{4} &<&5 \\\
+    \pi &\approx& 3 \\
+    \alpha \times \sqrt{4} &\neq& me \\
+    \sqrt{\beta} 
+\end{eqnarray}    
+
+\begin{eqnarray*}
+    x^{2^{4^5}} \\
+    \sqrt{4} &=& 2 \\ 
+    \sqrt{4} &\neq& 5 \\ 
+    \sqrt{4} &<&5 \\\
+    \pi &\approx& 3 \\
+    \alpha \times \sqrt{4} &\neq& me \\
+    \sqrt{\beta} 
+\end{eqnarray*}
+
+\begin{equation}\label{eq:1}
+x^2+8x-3=0
+\end{equation}
+
+\begin{equation}\label{eq:2}
+x^2+3x-1=0
+\end{equation}
+
+We can make our equations have a references \ref{eq:1} \ref{eq:2} and it is clickable as we did before thumbs up!
+
+$$\int_{lower}^{upper} $$
+$$f(x) = \int_{a}^{b} x^2 dx$$
+
+\newpage
+\section{Random Equations}
+
+\begin{equation}\label{eq:euler}
+    e^{ \pm i\theta } = \cos \theta \pm i\sin \theta
+\end{equation}
+
+
+\begin{equation}\label{eq:relu}
+ReLu(x)= max(0,x)
+\end{equation}
+
+
+    \begin{equation}\label{eq:derelu}
+    f(x)=\left\{
+    \begin{array}{@{}ll@{}}
+    0, & \text{if}\ x < 0 \\
+    1, & \text{if}\ x > 0 \\
+    DEN, & \text{if}\ x = 0
+    \end{array}\right.
+    \end{equation} 
+    
+    \begin{equation}\label{eq:backprop}
+        w_{new} = w_{old} + \alpha \frac{\partial f(e)}{\partial e} \delta
+    \end{equation}
+
+
+\begin{equation}\label{eq:softmax}
+Softmax(x_i) = \frac{exp(x_i)}{\sum_{j}^{ }exp(x_j)}
+\end{equation}
+
+
+\begin{equation}\label{eq:gaussian}
+    P(x) = \frac{1}{{\sigma \sqrt {2\pi } }}e^{{{ - \left( {x - \mu } \right)^2 } \mathord{\left/ {\vphantom {{ - \left( {x - \mu } \right)^2 } {2\sigma ^2 }}} \right. \kern-\nulldelimiterspace} {2\sigma ^2 }}}
+\end{equation}
+
+\begin{equation}\label{eq:cross}
+Binary Cross Entropy Loss(y,p) = -ylog(p)-(1-y)log(1-p)
+\end{equation}
+
+\begin{equation}
+\hat{d}=\frac{(d+n)!}{n!d!}
+\end{equation}
+
+
+
+    $E(s) = R(s)-C(s)$  and $C(s)=E(s)G(s)$
+    $$\Rightarrow E(s)= \frac{R(s)}{1+G(s)}$$\\
+    $$e(\infty)=\lim_{s\to\infty} \frac{sR(s)}{1+G(s)}$$
+    
+\begin{equation}\label{eq:euler}
+    e^{ i\pi } + 1 = 0
+\end{equation}
+
+\newpage
+\section{Chemical Equation}
+now we can write a chemistry equations, but we have to put preamble (mhchem). Then every time you need to build a chemical equation then you have to write:
+\ce{ H2O }\\
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{equation}
+\ce{CH_{4(g)} + O_{2(g)} -> CO_{2(g)} + 2H_2O{(l)}} \\ 
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{equation}
+    \ce{ CH_{4(g)} + 2O_{2(g)} -> CO_{2(g)} + 2H_{2O(l)} $\quad \Delta H_\ce{c}^{\ominus} = -890.3 \;$ kJ $\;$ mol^{-1} }    
+\end{equation} \\
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{equation}\\
+  \ce{ CO2 + C ->T[above][below] 2CO }  
+\end{equation}
+
+
+\begin{equation}
+    \ce{ Zn^2+ <=>[\ce{+ 2OH-}][\ce{+ 2H+}]$\underset{}{\ce{Zn(OH)2 v}}$<=>C[+2OH-][{+ 2H+}]$\underset{}{\cf{[Zn(OH)4]^2-}}$ }
+\end{equation}
+
+
+\newpage
+$p$ and $q$ are prime numbers
+$n  pq$
+
+$e$ with $gcd(\phi(n), e) = 1;$
+$1 < e < \phi(n); \phi(n)=(p-1)(q-1)$\\
+$d \equiv e^{-1}$
+$(mod \phi(n))$ Or $(d \times e) mod \phi(n)=1$\\
+
+
+\newpage
+\subsection{Arrays}
+
+
+\begin{equation*}
+    y = f({\sum_{i=1}^{n}w_i x_i + bias})  
+\end{equation*}
+
+\begin{equation*}
+    \hat{y} = 
+\end{equation*}
+
+\begin{itemize}
+    \item $f$ = Activation function (i.e. Linear, Logistic, Relu, ... etc).
+    \item $w_i$ = Wights
+    \item $x_i$ = input
+\end{itemize}
+
+ \begin{align}
+    y &= (x_{1},x_{2},\cdots, x_{N})
+        \begin{pmatrix}
+          \begin{bmatrix}
+           w_0 + bx_{1} \\           
+           \vdots \\
+           ax_{n-1}+bx_{n}
+          \end{bmatrix} -
+          \begin{bmatrix}
+           z_{1} \\
+           \vdots \\
+           z_{n}
+         \end{bmatrix}
+    \end{pmatrix}
+  \end{align}
+  
+    $f(x)$= 
+\begin{cases}
+    0 ,& \text{if } x\leq 0\\
+    1, & \text{if } x\geq 0 
+\end{cases}
+
+% \begin{equation}\label{eq:derelu}
+    % f(x)= 
+    % \begin{cases}
+    % 0 , & \text{if } x\leq 0 \\
+    % 1, & \text{if } x\geq 0 
+    % \end{cases}
+    % \end{equation}
+
+    \begin{equation}\label{eq:relu}
+        ReLu(x)= max(0,x)
+    \end{equation}
+    
+    \begin{equation}\label{eq:derelu}
+    f(x)=\left\{
+    \begin{array}{@{}ll@{}}
+    0, & \text{if}\ x \leq 1 \\
+    1, & \text{if}\ x \geq 1
+    \end{array}\right.
+    \end{equation} 
+
+\newpage  
+\subsection{Hamming Accuracy}
+Hamming accuracy depends on the subset accuracy where it calculate the accuracy for each individual subset on our total samples,  in our example the accuracy will be $\frac{1+1+1+0+1}{5} = \frac{4}{5} = 0.8$ and the one means the prediction is true and 0 is false, 5 is the number of classes. This only for one subset, what hamming accuracy does is adding all values from all subsets and then divide them on the total number of the subsets. Let us continue the example we have consider that we have more subset in the batch or "total dataset". 
+$$Ture\ Labels = [1, 1, 0, 1, 0], 
+               [0, 1, 1, 1, 0], 
+               [0, 0, 1, 1, 1]
+                $$
+$$Predicted\ Labels = [1, 1, 0, 0, 0], 
+               [0, 1, 1, 1, 0], 
+               [1, 0, 0, 1, 1] $$
+
+$$subset1 = \frac{1+1+1+0+1}{5} = \frac{4}{5} = 0.8$$
+$$subset2 = \frac{1+1+1+1+1}{5} = \frac{5}{5} = 1 \ (All\ true) \ if \ 0(All\ false) $$
+$$subset3 = \frac{0+1+0+1+1}{5} = \frac{3}{5} = 0.6$$
+
+$$ Hamming \ Accuracy \ "Score" \ = \frac{0.8 + 1 + 0.6}{3} = \frac{2.4}{3} = 0.8 = 80 \% $$
+
+In contrast for accuracy all subset will be equal 0 except subset2 which predicted all classes true $$ Accuracy = \frac{0 + 1 + 0}{3} = \frac{1}{3} = 0.33333 = 33.33 \% $$
+
+    
+    
+\end{document}
